@@ -1,8 +1,8 @@
-The Objective is to run the Eureka Server in High Availability mode so that if one server is down, the other takes over
+# The Objective is to run the Eureka Server in High Availability mode so that if one server is down, the other takes over
 
-Create 4 EC2 instances with public IP. For these EC2’s the security group should allow the VPC CIDR for port 9001, 9002, 9003 and SSH access with least privileges
+## Create 4 EC2 instances with public IP. For these EC2’s the security group should allow the VPC CIDR for port 9001, 9002, 9003 and SSH access with least privileges
 
-SSH onto four EC2 instances and perform following steps on all:
+## SSH onto four EC2 instances and perform following steps on all:
 1.	Install Java
 a.	sudo wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u141-b15/336fa29ff2bb4ef291e347e091f7f4a7/jdk-8u141-linux-x64.rpm
 
