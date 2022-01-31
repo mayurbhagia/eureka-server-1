@@ -4,11 +4,11 @@
 
 ## SSH onto four EC2 instances and perform following steps on all:
 1.	Install Java
-a.	sudo wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u141-b15/336fa29ff2bb4ef291e347e091f7f4a7/jdk-8u141-linux-x64.rpm
+    - a.	sudo wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u141-b15/336fa29ff2bb4ef291e347e091f7f4a7/jdk-8u141-linux-x64.rpm
 
-b.	sudo yum install -y jdk-8u141-linux-x64.rpm
-c.	sudo alternatives --config java
-d.	export JAVA_HOME=/usr/java/jdk1.8.0_141/
+    - b.	sudo yum install -y jdk-8u141-linux-x64.rpm
+    - c.	sudo alternatives --config java
+    - d.	export JAVA_HOME=/usr/java/jdk1.8.0_141/
 
 2.	Install maven
 a.	sudo wget https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
