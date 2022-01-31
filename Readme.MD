@@ -44,4 +44,8 @@ eureka.client.serviceUrl.defaultZone=http://eureka-server-1.com:9001/eureka, htt
    http://Public-IP-of-client-1:9001/callEurekaClient1
    http://Public-IP-of-client-1:9001/callEurekaClient2FromClient1 -- this will actually call Client 2 from Client 1 by doing client side load balancing and fetch the registry from Eureka service. Refer the code snippet in the controller java file as “ServiceInstance instance = loadBalancerClient.choose("EUREKA-CLIENT-2");”
 
+![Eureka-Server-1 with two clients and one peer server i.e. Server-2](https://github.com/mayurbhagia/eureka-server-1/blob/master/images/image1.png)
+![Eureka-Server-2 with two clients and one peer server i.e. Server-1](https://github.com/mayurbhagia/eureka-server-1/blob/master/images/image2.png)
+![Eureka-Client-1](https://github.com/mayurbhagia/eureka-server-1/blob/master/images/image3.png)
+![Eureka-Client-1 calling Client-2 via LoadBalancerClient](https://github.com/mayurbhagia/eureka-server-1/blob/master/images/image4.png)
 
