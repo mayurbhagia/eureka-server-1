@@ -25,24 +25,23 @@ Add entries as:
 <<private-IP-of-Server-1>> eureka-server-1.com
 <<private-IP-of-Server-2>> eureka-server-2.com
 
-How to test:
-Once you have run “java -jar” on 2 server machines, to test the application, goto browser and hit:
-Test Server 1 – http://Public-IP-of-Server-1:9001 it will show the Eureka default page
-You would see no client is registered as yet, but the server-2 machine is acting as Peer
+## How to test:
+1. Once you have run “java -jar” on 2 server machines, to test the application, goto browser and hit:
+   - Test Server 1 – http://Public-IP-of-Server-1:9001 it will show the Eureka default page
+   - You would see no client is registered as yet, but the server-2 machine is acting as Peer
 
-Test Server 2 – same as server 1
-How the Server-1 and Server 2 works as High availability mode, it is because of the line in application.properties of both the servers as: 
+2. Test Server 2 – same as server 1
+   - How the Server-1 and Server 2 works as High availability mode, it is because of the line in application.properties of both the servers as: 
 eureka.client.serviceUrl.defaultZone=http://eureka-server-1.com:9001/eureka, http://eureka-server-2.com:9002/eureka and the DNS to IP resolution is done from /etc/hosts file. Alternatively for this you can refer AWS AppMesh and CloudMesh which does similar service discovery
 
+3. Test Client 2 – http://Public-IP-of-Client-2:9001 and go and refresh browser pages for Server-1 and Server-2 and you would see Client 2 as registered
+4. Test Client 1 – http://Public-IP-of-client-1:9001 and go and refresh browser pages for Server-1 and Server-2 and you would see Client 1 is also registered
 
-Test Client 2 – http://Public-IP-of-Client-2:9001 and go and refresh browser pages for Server-1 and Server-2 and you would see Client 2 as registered
-Test Client 1 – http://Public-IP-of-client-1:9001 and go and refresh browser pages for Server-1 and Server-2 and you would see Client 1 is also registered
+5. Now test Client 2:
+   http://Public-IP-of-client-2:9001/callEurekaClient2
 
-Now test Client 2:
-http://Public-IP-of-client-2:9001/callEurekaClient2
-
-Now from Client 1 we will call Client 2, to do this run:
-http://Public-IP-of-client-1:9001/callEurekaClient1
-http://Public-IP-of-client-1:9001/callEurekaClient2FromClient1 -- this will actually call Client 2 from Client 1 by doing client side load balancing and fetch the registry from Eureka service. Refer the code snippet in the controller java file as “ServiceInstance instance = loadBalancerClient.choose("EUREKA-CLIENT-2");”
+6. Now from Client 1 we will call Client 2, to do this run:
+   http://Public-IP-of-client-1:9001/callEurekaClient1
+   http://Public-IP-of-client-1:9001/callEurekaClient2FromClient1 -- this will actually call Client 2 from Client 1 by doing client side load balancing and fetch the registry from Eureka service. Refer the code snippet in the controller java file as “ServiceInstance instance = loadBalancerClient.choose("EUREKA-CLIENT-2");”
 
 
