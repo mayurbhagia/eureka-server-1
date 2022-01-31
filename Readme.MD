@@ -47,10 +47,16 @@ eureka.client.serviceUrl.defaultZone=http://eureka-server-1.com:9001/eureka, htt
 ![Eureka-Server-1 with two clients and one peer server i.e. Server-2](https://github.com/mayurbhagia/eureka-server-1/blob/master/images/image1.png)
     
     
+    
+    
 ![Eureka-Server-2 with two clients and one peer server i.e. Server-1](https://github.com/mayurbhagia/eureka-server-1/blob/master/images/image2.png)
     
     
+    
+    
 ![Eureka-Client-1](https://github.com/mayurbhagia/eureka-server-1/blob/master/images/image3.png)
+    
+    
     
     
 ![Eureka-Client-1 calling Client-2 via LoadBalancerClient](https://github.com/mayurbhagia/eureka-server-1/blob/master/images/image4.png)
